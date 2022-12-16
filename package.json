@@ -15,6 +15,7 @@
     "docs": "vitepress dev packages --open",
     "docs:build": "nr update:full && vitepress build packages",
     "update": "nr -C packages/metadata update",
+    "update:full": "nr update && nr build:types",
     "demo": "esno scripts/demo.ts",
     "demo:watch": "nr -C demo watch",
     "size": "esno scripts/export-size.ts",
