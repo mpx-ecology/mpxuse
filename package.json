@@ -13,6 +13,7 @@
     "build:rollup": "rollup -c",
     "build:types": "tsc --emitDeclarationOnly",
     "docs": "vitepress dev packages --open",
+    "docs:build": "vitepress build packages",
     "update": "nr -C packages/metadata update",
     "demo": "esno scripts/demo.ts",
     "demo:watch": "nr -C demo watch",
