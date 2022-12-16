@@ -6,7 +6,6 @@ import { execSync as exec } from 'child_process'
 import { metadata } from '../packages/metadata/scripts/metadata'
 import { packages } from '../meta/packages'
 import { updateImport } from './utils'
-import { version } from '../package.json'
 
 const watch = process.argv.includes('--watch')
 const rootDir = path.resolve(__dirname, '..')

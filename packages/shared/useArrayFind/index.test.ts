@@ -1,4 +1,4 @@
-import { reactive, ref } from '@mpxjs/core'
+import { ref } from '@mpxjs/core'
 import { useArrayFind } from '../useArrayFind'
 
 describe('useArrayFind', () => {

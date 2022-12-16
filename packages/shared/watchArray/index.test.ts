@@ -1,4 +1,4 @@
-import { nextTick, reactive, ref } from '@mpxjs/core'
+import { nextTick, ref } from '@mpxjs/core'
 import { watchArray } from '.'
 import { noop } from '../utils'
 

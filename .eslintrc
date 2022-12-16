@@ -4,7 +4,7 @@
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/ban-types": "off",
-    "curly": ["error", "multi-or-nest", "consistent"],
+    "curly": ["warn", "multi-or-nest", "consistent"],
     "no-return-assign": "off"
   }
 }

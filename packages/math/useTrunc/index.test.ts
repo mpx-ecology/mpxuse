@@ -1,4 +1,4 @@
-import { ref, computed } from '@mpxjs/core'
+import { ref } from '@mpxjs/core'
 import { useTrunc } from '.'
 
 // Returns:

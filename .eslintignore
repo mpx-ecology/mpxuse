@@ -8,3 +8,4 @@ types/
 !/rollup.config.js
 !.test
 .temp
+demo/
