@@ -13,5 +13,5 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         TARGET_REPO: mpx-ecology/mpxuse
         TARGET_BRANCH: gh_pages
-        BUILD_SCRIPT: npm i && npm run docs:build
+        BUILD_SCRIPT: pnpm i && npm run docs:build
         BUILD_DIR: packages/.vitepress/dist/
