@@ -1,0 +1,35 @@
+<script setup lang="ts">
+import { createGlobalState } from '@mpxjs/mpxuse-core'
+import { ref, computed } from '@mpxjs/core'
+const useState = createGlobalState(() => {
+  const counter = ref(1)
+  const doubled = computed(() => counter.value * 2)
+
+  return {
+    counter,
+    doubled
+  }
+})
+
+const { counter, doubled } = useState()
+
+const increase = () => {
+  counter.value++
+}
+const reduce = () => {
+  counter.value--
+}
+defineExpose({
+  counter,
+  doubled,
+  increase,
+  reduce
+})
+</script>
+
+<template>
+  <view>counter: {{ counter }}</view>
+  <view>doubled: {{ doubled }}</view>
+  <button bindtap="increase">增加</button>
+  <button bindtap="reduce">减少</button>
+</template>

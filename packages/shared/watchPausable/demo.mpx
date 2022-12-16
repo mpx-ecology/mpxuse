@@ -1,0 +1,63 @@
+<script setup lang="ts">
+import { ref } from '@mpxjs/core'
+import { watchPausable } from '@mpxjs/mpxuse-core'
+
+const log = ref('')
+
+const source = ref('')
+
+const watcher = watchPausable(
+  source,
+  (v: any) => (log.value += `Changed to "${v}"\n`)
+)
+
+const clear = () => {
+  log.value = ''
+}
+const pause = () => {
+  log.value += 'Paused\n'
+  watcher.pause()
+}
+const resume = () => {
+  log.value += 'Resumed\n'
+  watcher.resume()
+}
+
+const { isActive } = watcher
+
+defineExpose({
+  clear,
+  pause,
+  resume,
+  isActive,
+  source,
+  log
+})
+</script>
+
+<template>
+  <view>
+    <view class="mb-2">
+      Type something below to trigger the watch
+    </view>
+    <input
+      ref="input"
+      wx:model="{{source}}"
+      type="text"
+    />
+
+    <button disabled="{{!isActive}}" class="orange" bindtap="pause">
+      Pause
+    </button>
+    <button disabled="{{isActive}}" bindtap="resume">
+      Resume
+    </button>
+    <button bindtap="clear">
+      Clear Log
+    </button>
+
+    <view>Log</view>
+
+    <view>{{ log }}</view>
+    </view>
+</template>

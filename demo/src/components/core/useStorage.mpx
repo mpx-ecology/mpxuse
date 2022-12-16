@@ -1,0 +1,48 @@
+<script setup lang="ts">
+import { useStorage, extendRef } from '@mpxjs/mpxuse-core'
+import { ref } from '@mpxjs/core'
+const content = ref({ title: '标题', text: 'something content' })
+const res = useStorage('usestorage-key', content, {
+  sync: true
+})
+
+const mergeFn = () => {
+  const ex = extendRef({ ...content.value }, {
+    text: 'merge something'
+  })
+  res.value = ex.value
+}
+
+const reset = () => {
+  res.value = content.value
+}
+
+const remove = () => {
+  res.value = '' as any
+}
+
+defineExpose({
+  res,
+  remove,
+  mergeFn,
+  reset
+})
+</script>
+
+<template>
+  <view>
+    Title: {{ res && res.title }}
+  </view>
+  <view>
+    content: {{ res && res.text }}
+  </view>
+  <button bindtap="mergeFn">
+    Merge
+  </button>
+  <button bindtap="remove">
+    Remove
+  </button>
+  <button bindtap="reset">
+    Reset
+  </button>
+</template>

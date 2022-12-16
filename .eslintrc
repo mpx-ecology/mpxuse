@@ -1,0 +1,10 @@
+{
+  "extends": "@mpxjs/eslint-config-ts",
+  "rules": {
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-types": "off",
+    "curly": ["error", "multi-or-nest", "consistent"],
+    "no-return-assign": "off"
+  }
+}

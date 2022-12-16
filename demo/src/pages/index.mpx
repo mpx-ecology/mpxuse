@@ -1,0 +1,141 @@
+<template>
+   <view  wx:if="{{showList}}">
+    <view wx:for="{{coms}}" wx:key="package" >
+      <view>{{item.package}}</view>
+      <button wx:for="{{item.fns}}" wx:key="name" wx:for-item="fn" bindtap="setCurrentCom(fn.name)">
+        {{ fn.name }}
+      </button>
+    </view>
+  </view>
+  <button bindtap="back" wx:else > 返回 </button>
+  <component is="{{currentCom}}" />
+</template>
+
+<script setup lang="ts">
+/* eslint-disable indent,quotes,quote-props */
+  import { ref } from '@mpxjs/core'
+  const coms = ref(
+    [
+  {
+    "package": "core",
+    "fns": [
+      {
+        "name": "useCached",
+        "path": "../components/core/useCached"
+      },
+      {
+        "name": "useEventBus",
+        "path": "../components/core/useEventBus"
+      },
+      {
+        "name": "useStorage",
+        "path": "../components/core/useStorage"
+      },
+      {
+        "name": "useTitle",
+        "path": "../components/core/useTitle"
+      }
+    ]
+  },
+  {
+    "package": "math",
+    "fns": [
+      {
+        "name": "useClamp",
+        "path": "../components/math/useClamp"
+      },
+      {
+        "name": "useProjection",
+        "path": "../components/math/useProjection"
+      }
+    ]
+  },
+  {
+    "package": "shared",
+    "fns": [
+      {
+        "name": "createGlobalState",
+        "path": "../components/shared/createGlobalState"
+      },
+      {
+        "name": "useCounter",
+        "path": "../components/shared/useCounter"
+      },
+      {
+        "name": "useDebounceFn",
+        "path": "../components/shared/useDebounceFn"
+      },
+      {
+        "name": "useThrottleFn",
+        "path": "../components/shared/useThrottleFn"
+      },
+      {
+        "name": "useToggle",
+        "path": "../components/shared/useToggle"
+      },
+      {
+        "name": "watchDebounced",
+        "path": "../components/shared/watchDebounced"
+      },
+      {
+        "name": "watchIgnorable",
+        "path": "../components/shared/watchIgnorable"
+      },
+      {
+        "name": "watchPausable",
+        "path": "../components/shared/watchPausable"
+      },
+      {
+        "name": "watchThrottled",
+        "path": "../components/shared/watchThrottled"
+      },
+      {
+        "name": "watchTriggerable",
+        "path": "../components/shared/watchTriggerable"
+      }
+    ]
+  }
+]
+  )
+  const showList = ref(true)
+  const currentCom = ref('')
+  const setCurrentCom = (item: string) => {
+    showList.value = false
+    currentCom.value = item
+  }
+  const back = () => {
+    showList.value = true
+    currentCom.value = ''
+  }
+  defineExpose({
+    back,
+    showList,
+    coms,
+    currentCom,
+    setCurrentCom
+  })
+</script>
+
+<script type="application/json">
+  {
+    "usingComponents":
+    {
+  "useCached": "../components/core/useCached",
+  "useEventBus": "../components/core/useEventBus",
+  "useStorage": "../components/core/useStorage",
+  "useTitle": "../components/core/useTitle",
+  "useClamp": "../components/math/useClamp",
+  "useProjection": "../components/math/useProjection",
+  "createGlobalState": "../components/shared/createGlobalState",
+  "useCounter": "../components/shared/useCounter",
+  "useDebounceFn": "../components/shared/useDebounceFn",
+  "useThrottleFn": "../components/shared/useThrottleFn",
+  "useToggle": "../components/shared/useToggle",
+  "watchDebounced": "../components/shared/watchDebounced",
+  "watchIgnorable": "../components/shared/watchIgnorable",
+  "watchPausable": "../components/shared/watchPausable",
+  "watchThrottled": "../components/shared/watchThrottled",
+  "watchTriggerable": "../components/shared/watchTriggerable"
+}
+  }
+</script>

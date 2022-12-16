@@ -1,0 +1,14 @@
+<script setup lang="ts">
+import { useTitle } from '@mpxjs/mpxuse-core'
+
+const title = useTitle(null)
+
+defineExpose({
+  title
+})
+</script>
+
+<template>
+  <view>Title</view>
+  <input wx:model="{{ title }}" type="text" />
+</template>

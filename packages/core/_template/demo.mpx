@@ -1,0 +1,32 @@
+<script setup lang="ts">
+import { useCounter } from '@mpxjs/mpxuse-core'
+
+const { count, inc, dec, set, reset } = useCounter()
+defineExpose({
+  count, inc, dec, set, reset
+})
+</script>
+
+<template>
+  <view>
+    <view>Count: {{ count }}</view>
+    <button bindtap="inc">
+      Increment
+    </button>
+    <button bindtap="dec">
+      Decrement
+    </button>
+    <button bindtap="inc(5)">
+      Increment (+5)
+    </button>
+    <button bindtap="dec(5)">
+      Decrement (-5)
+    </button>
+    <button bindtap="set(100)">
+      Set (100)
+    </button>
+    <button bindtap="reset">
+      Reset
+    </button>
+  </view>
+</template>

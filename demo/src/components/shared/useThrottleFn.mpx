@@ -1,0 +1,32 @@
+<script setup lang="ts">
+import { ref } from '@mpxjs/core'
+import { useThrottleFn } from '@mpxjs/mpxuse-core'
+
+const updated = ref(0)
+const clicked = ref(0)
+const throttledFn = useThrottleFn(() => {
+  updated.value += 1
+}, 1000)
+
+const clickedFn = () => {
+  clicked.value += 1
+  throttledFn()
+}
+defineExpose({
+  clicked,
+  clickedFn,
+  updated
+})
+</script>
+
+<template>
+  <view>
+    <button bindtap="clickedFn">
+      Smash me!
+    </button>
+    <view>Delay is set to 1000ms for this demo.</view>
+
+    <view>Button clicked: {{ clicked }}</view>
+    <view>Event handler called: {{ updated }}</view>
+  </view>
+</template>

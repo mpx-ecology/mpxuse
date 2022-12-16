@@ -1,0 +1,49 @@
+<script setup lang="ts">
+import { ref } from '@mpxjs/core'
+import { watchIgnorable } from '@mpxjs/mpxuse-core'
+
+const log = ref('')
+const source = ref(0)
+
+const { ignoreUpdates } = watchIgnorable(
+  source,
+  (v:any) => (log.value += `Changed to "${v}"\n`),
+  { flush: 'sync' }
+)
+
+const clear = () => {
+  source.value = 0
+  log.value = ''
+}
+const update = () => {
+  source.value++
+}
+const ignoredUpdate = () => {
+  ignoreUpdates(() => {
+    source.value++
+  })
+}
+defineExpose({
+  clear,
+  update,
+  ignoredUpdate,
+  source,
+  log
+})
+</script>
+
+<template>
+  <view>Value: {{ source }}</view>
+  <button bindtap="update">
+    Update
+  </button>
+  <button class="orange" bindtap="ignoredUpdate">
+    Ignored Update
+  </button>
+  <button bindtap="clear">
+    Reset
+  </button>
+  <view>Log</view>
+
+  <view>{{ log }}</view>
+</br></template>

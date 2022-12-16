@@ -1,0 +1,32 @@
+<script setup lang="ts">
+import { useToggle } from '@mpxjs/mpxuse-core'
+
+const [value, toggle] = useToggle()
+const setOn = () => {
+  value.value = true
+}
+const setOff = () => {
+  value.value = false
+}
+defineExpose({
+  value,
+  toggle,
+  setOn,
+  setOff
+})
+</script>
+
+<template>
+  <view>
+    <view>Value: {{ value ? 'ON' : 'OFF' }}</view>
+    <button bindtap="toggle">
+      Toggle
+    </button>
+    <button bindtap="setOn">
+      Set ON
+    </button>
+    <button bindtap="setOff">
+      Set OFF
+    </button>
+  </view>
+</template>

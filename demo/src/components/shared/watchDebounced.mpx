@@ -1,0 +1,26 @@
+<script setup lang="ts">
+import { ref } from '@mpxjs/core'
+import { watchDebounced } from '@mpxjs/mpxuse-core'
+
+const input = ref('')
+const updated = ref(0)
+
+watchDebounced(input, () => {
+  updated.value += 1
+}, { debounce: 1000, maxWait: 5000 })
+
+defineExpose({
+  input,
+  updated
+})
+</script>
+
+<template>
+  <view>
+    <input wx:model="{{input}}" placeholder="Try to type anything..." type="text" />
+    <view>Delay is set to 1000ms and maxWait is set to 5000ms for this demo.</view>
+
+    <view>Input: {{ input }}</view>
+    <view>Times Updated: {{ updated }}</view>
+  </view>
+</template>

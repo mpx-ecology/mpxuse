@@ -1,0 +1,54 @@
+<script setup lang="ts">
+import { ref } from '@mpxjs/core'
+import { watchTriggerable } from '@mpxjs/mpxuse-core'
+
+const log = ref('')
+const source = ref(0)
+
+const { trigger, ignoreUpdates } = watchTriggerable(
+  source,
+  async (v:any, _:any, onCleanup:any) => {
+    let canceled = false
+    onCleanup(() => canceled = true)
+    await new Promise(resolve => setTimeout(resolve, 500))
+    if (canceled) return
+
+    log.value += `The value is "${v}"\n`
+  }
+)
+
+const clear = () => {
+  ignoreUpdates(() => {
+    source.value = 0
+    log.value = ''
+  })
+}
+const update = () => {
+  source.value++
+}
+
+defineExpose({
+  source,
+  update,
+  trigger,
+  clear,
+  log
+})
+</script>
+
+<template>
+  <view>Value: {{ source }}</view>
+  <button bindtap="update">
+    Update
+  </button>
+  <button class="orange" bindtap="trigger">
+    Manual Trigger
+  </button>
+  <button bindtap="clear">
+    Reset
+  </button>
+
+  <view>Log (500 ms delay)</view>
+
+  <view>{{ log }}</view>
+</template>

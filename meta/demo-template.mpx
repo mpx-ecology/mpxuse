@@ -1,0 +1,44 @@
+<template>
+   <view  wx:if="{{showList}}">
+    <view wx:for="{{coms}}" wx:key="package" >
+      <view>{{item.package}}</view>
+      <button wx:for="{{item.fns}}" wx:key="name" wx:for-item="fn" bindtap="setCurrentCom(fn.name)">
+        {{ fn.name }}
+      </button>
+    </view>
+  </view>
+  <button bindtap="back" wx:else > 返回 </button>
+  <component is="{{currentCom}}" />
+</template>
+
+<script setup lang="ts">
+/* eslint-disable indent,quotes,quote-props */
+  import { ref } from '@mpxjs/core'
+  const coms = ref(
+    /* coms */
+  )
+  const showList = ref(true)
+  const currentCom = ref('')
+  const setCurrentCom = (item: string) => {
+    showList.value = false
+    currentCom.value = item
+  }
+  const back = () => {
+    showList.value = true
+    currentCom.value = ''
+  }
+  defineExpose({
+    back,
+    showList,
+    coms,
+    currentCom,
+    setCurrentCom
+  })
+</script>
+
+<script type="application/json">
+  {
+    "usingComponents":
+    /* usingComponents */
+  }
+</script>

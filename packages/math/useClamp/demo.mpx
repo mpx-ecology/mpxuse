@@ -1,0 +1,35 @@
+<script setup lang="ts">
+import { ref } from '@mpxjs/core'
+import { useClamp } from '@mpxjs/mpxuse-math'
+const min = ref(0)
+const max = ref(10)
+
+const value = useClamp(0, min, max)
+const decrement = () => value.value--
+const increment = () => value.value++
+defineExpose({
+  min,
+  max,
+  value,
+  decrement,
+  increment
+})
+</script>
+
+<template>
+  <div>
+    min:
+    <input wx:model="{{min}}" type="number" />
+    max:
+    <input wx:model="{{max}}" type="number" />
+    value:{{ value }}
+    <div>
+      <button bindtap="decrement">
+        Decrement
+      </button>
+      <button bindtap="increment">
+        Increment
+      </button>
+    </div>
+  </div>
+</template>

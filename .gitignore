@@ -1,0 +1,15 @@
+.DS_Store
+.idea
+.temp
+*.log
+components.d.ts
+dist
+index.json
+indexes.json
+node_modules
+types
+coverage
+.eslintcache
+packages/*/LICENSE
+packages/contributing.md
+packages/*/index.mjs
