@@ -11,5 +11,4 @@ types
 coverage
 .eslintcache
 packages/*/LICENSE
-packages/contributing.md
 packages/*/index.mjs
