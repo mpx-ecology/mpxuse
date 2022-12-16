@@ -30,6 +30,7 @@ export default defineConfig({
       dark: 'vitesse-dark'
     }
   },
+  base: '/mpxuse/',
   themeConfig: {
     logo: '/favicon.svg',
     nav: [
