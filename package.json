@@ -14,6 +14,8 @@
     "build:types": "tsc --emitDeclarationOnly",
     "docs": "vitepress dev packages --open",
     "docs:build": "nr update:full && vitepress build packages",
+    "lint": "eslint --cache .",
+    "lint:fix": "nr lint --fix",
     "update": "nr -C packages/metadata update",
     "update:full": "nr update && nr build:types",
     "demo": "esno scripts/demo.ts",
