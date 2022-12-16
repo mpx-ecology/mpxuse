@@ -24,7 +24,7 @@ Mpx的composition-api的公用方法
 - 🕶 **支持版本**: mpx2.8版本以上
 - ⚡ **完全tree shakeable**: 仅打包所引用的, [bundle size](https://mpx-ecology.github.io/mpxuse/export-size)
 - 🦾 **Type Strong**: [TypeScript](https://www.typescriptlang.org/)编写, [TS Docs](https://github.com/microsoft/tsdoc)
-- 🔩 **灵活配置**: 可配置的事件筛选器和目标
+- 🔩 **灵活配置**: 可配置的事件筛选器
 
 ## 🦄 用法
 
@@ -72,6 +72,9 @@ defineExpose({
 
 ```bash
 npm i @mpxjs/mpxuse-core
+
+// 其他附加方法
+npm i @mpxjs/mpxuse-math
 ```
 
 ###### Demos
