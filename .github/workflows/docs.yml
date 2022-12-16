@@ -7,6 +7,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+
     - name: vitepress-deploy
       uses: jenkey2011/vuepress-deploy@master
       env:
