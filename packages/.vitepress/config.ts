@@ -82,8 +82,8 @@ export default defineConfig({
     ['meta', { name: 'theme-color', content: '#ffffff' }],
     ['meta', { name: 'author', content: 'Pagnkelly' }],
     ['meta', { property: 'og:title', content: 'MpxUse' }],
-    ['link', { rel: 'icon', href: '/favicon.png', type: 'image/png' }],
-    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }]
+    ['link', { rel: 'icon', href: '/mpxuse/favicon.png', type: 'image/png' }],
+    ['link', { rel: 'icon', href: '/mpxuse/favicon.svg', type: 'image/svg+xml' }]
   ]
 })
 
