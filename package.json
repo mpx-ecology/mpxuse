@@ -1,5 +1,6 @@
 {
   "name": "@mpxjs/mpxuse-monorepo",
+  "packageManager": "pnpm@7.6.0",
   "version": "1.0.2",
   "private": true,
   "description": "composition-api的公用方法",
