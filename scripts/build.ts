@@ -16,22 +16,23 @@ const FILES_COPY_ROOT = [
   'README.md'
 ]
 
-// const FILES_COPY_LOCAL = [
-//   '*.cjs',
-//   '*.mjs',
-//   '*.d.ts'
-// ]
+const FILES_COPY_LOCAL = [
+  'index.json',
+  '*.cjs',
+  '*.mjs',
+  '*.d.ts'
+]
 
 async function buildMetaFiles() {
   for (const { name } of packages) {
     const packageRoot = path.resolve(__dirname, '..', 'packages', name)
-    // const packageDist = path.resolve(packageRoot, 'dist')
+    const packageDist = path.resolve(packageRoot, 'dist')
     // if (name === 'core') await fs.copyFile(path.join(rootDir, 'README.md'), path.join(packageRoot, 'README.md'))
 
     for (const file of FILES_COPY_ROOT) await fs.copyFile(path.join(rootDir, file), path.join(packageRoot, file))
 
-    // const files = await fg(FILES_COPY_LOCAL, { cwd: packageRoot })
-    // for (const file of files) await fs.copyFile(path.join(packageRoot, file), path.join(packageDist, file))
+    const files = await fg(FILES_COPY_LOCAL, { cwd: packageRoot })
+    for (const file of files) await fs.copyFile(path.join(packageRoot, file), path.join(packageDist, file))
 
     // const packageJSON = await fs.readJSON(path.join(packageRoot, 'package.json'))
     // for (const key of Object.keys(packageJSON.dependencies || {}))
