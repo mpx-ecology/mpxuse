@@ -1,4 +1,5 @@
 export * from './useCached'
+export * from './useClipboard'
 export * from './useEventBus'
 export * from './useStorage'
 export * from './useTitle'

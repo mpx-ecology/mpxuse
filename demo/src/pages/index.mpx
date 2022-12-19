@@ -24,6 +24,10 @@
         "path": "../components/core/useCached"
       },
       {
+        "name": "useClipboard",
+        "path": "../components/core/useClipboard"
+      },
+      {
         "name": "useEventBus",
         "path": "../components/core/useEventBus"
       },
@@ -121,6 +125,7 @@
     "usingComponents":
     {
   "useCached": "../components/core/useCached",
+  "useClipboard": "../components/core/useClipboard",
   "useEventBus": "../components/core/useEventBus",
   "useStorage": "../components/core/useStorage",
   "useTitle": "../components/core/useTitle",

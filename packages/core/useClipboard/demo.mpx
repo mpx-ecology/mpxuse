@@ -1,0 +1,39 @@
+<script setup lang="ts">
+import mpx, { ref } from '@mpxjs/core'
+import { useClipboard } from '@mpxjs/mpxuse-core'
+
+const input = ref('')
+
+const { text, flush, copy, copied } = useClipboard()
+const nativeCopy = () => {
+  mpx.setClipboardData({
+    data: '这一段话'
+  })
+}
+defineExpose({
+  input,
+  text,
+  flush,
+  copy,
+  copied,
+  nativeCopy
+})
+</script>
+
+<template>
+  <view v-if="isSupported">
+    <view>
+      当前复制: <view>{{ text || 'none' }}</view>
+    </view>
+    <input wx:model="{{input}}" type="text" />
+    <button bindtap="copy(input)">
+      复制
+    </button>
+    <button bindtap="nativeCopy">
+      调用原生API复制: "这一段话"，然后调用刷新
+    </button>
+    <button bindtap="flush">
+      刷新
+    </button>
+  </view>
+</template>
