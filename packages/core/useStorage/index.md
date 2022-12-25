@@ -1,5 +1,5 @@
 ---
-category: Miniprogram
+category: State
 ---
 
 # useStorage
