@@ -73,8 +73,8 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/mpx-ecology/mpxuse' }
     ],
     algolia: {
-      appId: '61D0AT31Y2',
-      apiKey: '28d57e28a13a6d01e8e2c2c4a4cc2ef0',
+      appId: '9CQ35OJMJB',
+      apiKey: '061ba7b05d5e537b12ee79dce1f5c63b',
       indexName: 'mpxuse'
     }
   },

@@ -12,7 +12,9 @@ category: State
 ```js
 import { useStorage } from '@mpxjs/mpxuse-core'
 
-const { res } = useStorage('key')
+const data = useStorage('key')
+
+data.value // 存储的值
 
 ```
 
