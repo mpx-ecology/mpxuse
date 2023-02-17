@@ -1,6 +1,6 @@
 # 快速开始
 
-MueUse是基于[Composition API](https://mpxjs.cn/api/composition-api.html)的实用程序函数集合. 我们假设您已经熟悉[Composition API](https://mpxjs.cn/articles/2.8-release.html)的基本思想在继续之前。
+MpxUse是基于[Composition API](https://mpxjs.cn/api/composition-api.html)的实用程序函数集合. 我们假设您已经熟悉[Composition API](https://mpxjs.cn/articles/2.8-release.html)的基本思想在继续之前。
 
 ## 安装说明
 
