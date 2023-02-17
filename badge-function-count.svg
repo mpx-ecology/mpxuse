@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="78px" height="20px" viewBox="0 0 78 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>badge-function-count</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="78" height="20" rx="3"></rect>
+        <linearGradient x1="0%" y1="0%" x2="0%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#BBBBBB" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="badge-function-count">
+            <g id="Clipped">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="矩形"></g>
+                <g id="编组" mask="url(#mask-2)" fill-rule="nonzero">
+                    <rect id="矩形" fill="#13708A" x="0" y="0" width="1" height="20"></rect>
+                    <rect id="矩形" fill="#13708A" x="0" y="0" width="78" height="20"></rect>
+                    <rect id="矩形" fill="url(#linearGradient-3)" x="0" y="0" width="78" height="20"></rect>
+                </g>
+            </g>
+            <g id="编组" transform="translate(5.000000, 3.000000)" fill-rule="nonzero" font-family="Verdana" font-size="11" font-weight="normal">
+                <text id="49-functions" fill-opacity="0.3" fill="#010101">
+                    <tspan x="0" y="11">49 functions</tspan>
+                </text>
+                <text id="49-functions" fill="#FFFFFF">
+                    <tspan x="0" y="11">49 functions</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
